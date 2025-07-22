@@ -323,7 +323,7 @@ const Home = () => {
                         whileTap={{ scale: 0.98 }}
                       >
                         <NavLink
-                          to="ourwork"
+                          to="/all"
                           className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
                         >
                           <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
