@@ -321,11 +321,12 @@ const ProjectsAdmin = () => {
                                     </select>
                                 </div>
 
+                                {/* Project Image Field */}
                                 <div className="sm:col-span-2">
                                     <label className="block text-sm font-medium text-gray-700 mb-1">
                                         Project Image *
                                     </label>
-                                    {formData.imageUrl ? (
+                                    {formData.imageUrl && !imageUploading ? (
                                         <div className="mb-4">
                                             <img
                                                 src={formData.imageUrl}
@@ -334,7 +335,10 @@ const ProjectsAdmin = () => {
                                             />
                                             <button
                                                 type="button"
-                                                onClick={() => setFormData({ ...formData, imageUrl: '' })}
+                                                onClick={() => {
+                                                    setFormData({ ...formData, imageUrl: '' });
+                                                    setUploadError(null);
+                                                }}
                                                 className="text-sm text-red-600 hover:text-red-800"
                                             >
                                                 Change Image

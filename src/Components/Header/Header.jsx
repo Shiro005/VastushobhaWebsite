@@ -5,11 +5,7 @@ import { Link } from "react-router-dom";
 const menuItems = [
     { name: "Home", href: "#home" },
     { name: "Services", href: "#services" },
-    {
-        name: "Projects",
-        href: "/all",
-
-    },
+    { name: "Projects", href: "#ProjectsHorizontal" }, // <-- This must match the section ID
     { name: "About Us", href: "#about" },
 ];
 
@@ -43,13 +39,18 @@ export default function Header() {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isMenuOpen]);
 
+    // Scroll logic
     const handleLinkClick = (e, href, name) => {
         e.preventDefault();
         setActiveLink(name);
 
         if (href.startsWith('#')) {
-            const element = document.getElementById(href.substring(1));
-            element?.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                const element = document.getElementById(href.substring(1));
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
         }
 
         setIsMenuOpen(false);
@@ -62,8 +63,8 @@ export default function Header() {
             <div className="fixed top-0 left-0 w-full bg-gradient-to-b from-rose-500/10 to-transparent pointer-events-none z-30" />
 
             <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled
-                    ? 'bg-white/95 backdrop-blur-md shadow-sm py-2 border-b border-rose-100'
-                    : 'bg-white/90 backdrop-blur-sm py-3'
+                ? 'bg-white/95 backdrop-blur-md shadow-sm py-2 border-b border-rose-100'
+                : 'bg-white/90 backdrop-blur-sm py-3'
                 }`}>
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-between">
@@ -71,7 +72,7 @@ export default function Header() {
                         <Link
                             to="/"
                             className="flex items-center space-x-2 z-50"
-                            // onClick={(e) => handleLinkClick(e, "#home", "Home")}
+                        // onClick={(e) => handleLinkClick(e, "#home", "Home")}
                         >
                             <img
                                 src="/logo.png"
@@ -94,8 +95,8 @@ export default function Header() {
                                         href={item.href}
                                         onClick={(e) => handleLinkClick(e, item.href, item.name)}
                                         className={`flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${activeLink === item.name
-                                                ? "text-white bg-rose-500"
-                                                : "text-gray-700 hover:bg-rose-50 hover:text-rose-600"
+                                            ? "text-white bg-rose-500"
+                                            : "text-gray-700 hover:bg-rose-50 hover:text-rose-600"
                                             }`}
                                     >
                                         {item.name}
@@ -127,7 +128,7 @@ export default function Header() {
                                 className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-rose-600 px-3 py-2 rounded-md hover:bg-rose-50 transition-colors"
                             >
                                 <Phone className="w-4 h-4" />
-                                <span>+91 9922997079</span>
+                                <span>+91 9975985757</span>
                             </a>
                             <a
                                 href="#contact"
@@ -176,8 +177,8 @@ export default function Header() {
                                 <div key={item.name} className="mb-1">
                                     <div
                                         className={`flex items-center justify-between p-3 rounded-md ${activeLink === item.name
-                                                ? "bg-rose-500 text-white"
-                                                : "text-gray-700 hover:bg-rose-50"
+                                            ? "bg-rose-500 text-white"
+                                            : "text-gray-700 hover:bg-rose-50"
                                             }`}
                                         onClick={() => item.submenu && setActiveSubmenu(activeSubmenu === item.name ? null : item.name)}
                                     >
@@ -218,7 +219,7 @@ export default function Header() {
                                 className="flex items-center space-x-2 p-3 text-sm font-medium text-gray-700 hover:bg-rose-50 rounded-md mb-3"
                             >
                                 <Phone className="w-4 h-4 text-rose-500" />
-                                <span>+91 9922997079</span>
+                                <span>+91 9975985757</span>
                             </a>
                             <a
                                 href="#contact"
