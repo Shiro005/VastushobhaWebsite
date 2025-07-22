@@ -361,7 +361,7 @@ const Home = () => {
                       </div>
                       <div className="flex items-center gap-2">
                         <Users className="w-5 h-5 text-red-400 flex-shrink-0" />
-                        <span>1000+ Happy Clients</span>
+                        <span>1500+ Happy Clients</span>
                       </div>
                     </motion.div>
                   </motion.div>
