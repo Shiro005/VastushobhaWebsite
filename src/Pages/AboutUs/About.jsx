@@ -151,13 +151,7 @@ function About() {
                         >
                             Where traditional wisdom meets modern engineering excellence
                         </motion.p>
-                        <motion.button
-                            className="px-8 py-3 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105 border border-primary-500 shadow-lg"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            Explore Our Projects
-                        </motion.button>
+                       
                     </div>
                 </motion.div>
 
