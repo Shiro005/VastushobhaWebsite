@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiSend, FiPhone, FiMail, FiUser, FiMessageSquare, FiCheckCircle, FiMapPin } from 'react-icons/fi';
 import { Helmet } from 'react-helmet-async';
+import { href } from 'react-router-dom';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -155,7 +156,7 @@ const ContactForm = () => {
               "mainEntity": {
                 "@type": "Organization",
                 "name": "Vastushobha Construction",
-                "telephone": "+91 8698165330",
+                "telephone": "+91 9975985757 ",
                 "email": "vastushobhaconstructions@gmail.com",
                 "address": {
                   "@type": "PostalAddress",
@@ -424,10 +425,10 @@ const ContactForm = () => {
                         <h3 className="text-lg font-medium text-gray-900 mb-1">Phone Numbers</h3>
                         <div className="space-y-1">
                           <a href="tel:+918698165330" className="block text-gray-700 hover:text-red-600 transition-colors">
-                            +91 8698165330
+                            +91 9975985757
                           </a>
                           <a href="tel:+917745803646" className="block text-gray-700 hover:text-red-600 transition-colors">
-                            +91 7745803646
+                            +91 9552181899
                           </a>
                         </div>
                       </div>
@@ -443,7 +444,7 @@ const ContactForm = () => {
                       <div>
                         <h3 className="text-lg font-medium text-gray-900 mb-1">Office Address</h3>
                         <address className="text-gray-600 not-italic">
-                          Akola, Maharashtra, India - 444001
+                          Shree Hari Complex,Shop No 9 & 10, First Floor, Arogya Nagar Square, Kaulkhed Road, Akola.
                         </address>
                       </div>
                     </motion.div>
@@ -456,40 +457,20 @@ const ContactForm = () => {
                     <ul className="space-y-2 text-gray-700">
                       <li className="flex justify-between">
                         <span>Monday - Friday</span>
-                        <span className="font-medium">9:00 AM - 6:00 PM</span>
+                        <span className="font-medium">10:00 AM - 6:00 PM</span>
                       </li>
                       <li className="flex justify-between">
                         <span>Saturday</span>
                         <span className="font-medium">10:00 AM - 4:00 PM</span>
                       </li>
                       <li className="flex justify-between">
-                        <span>Sunday</span>
+                        <span>Tuesday</span>
                         <span className="font-medium">Closed</span>
                       </li>
                     </ul>
                   </div>
 
-                  <h3 className="text-lg font-medium text-gray-900 mt-8 mb-4">Connect With Us</h3>
-                  <div className="flex space-x-4">
-                    {[
-                      { name: 'Facebook', icon: 'M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z' },
-                      { name: 'Instagram', icon: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z' },
-                      { name: 'LinkedIn', icon: 'M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z' }
-                    ].map((social) => (
-                      <motion.a
-                        key={social.name}
-                        href="#"
-                        whileHover={{ y: -4 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-gray-100 p-3 rounded-full text-gray-700 hover:text-white hover:bg-red-600 transition-colors duration-300"
-                        aria-label={social.name}
-                      >
-                        <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d={social.icon} />
-                        </svg>
-                      </motion.a>
-                    ))}
-                  </div>
+                  
                 </div>
               </div>
             </motion.div>

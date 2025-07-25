@@ -41,30 +41,16 @@ function About() {
     const engineers = [
         {
             id: 1,
-            name: "Er. Eng first",
+            name: "Jaydip Patil Mahalle",
             title: "Co-Founder",
-            image: "https://images.pexels.com/photos/2955375/pexels-photo-2955375.jpeg",
+            image: "https://res.cloudinary.com/dvfa1ub9w/image/upload/v1753181155/WhatsApp_Image_2025-07-22_at_16.15.24_ksizst.jpg",
             shortBio: "Structural design expert bringing innovative engineering solutions to complex projects.",
-            fullBio: "With expertise in structural design and analysis, Purvesh brings innovative engineering solutions to our most complex projects. His leadership ensures all structures exceed safety standards while maintaining architectural integrity.",
+            fullBio: "With expertise in structural design and analysis, Jaydip brings innovative engineering solutions to our most complex projects. His leadership ensures all structures exceed safety standards while maintaining architectural integrity.",
             quote: "Engineering isn't just about calculations—it's about creating structures that elevate human experience.",
             stats: [
                 { value: "5+", label: "Years Exp." },
-                { value: "M.E", label: "Structural Eng." },
+                { value: "B.E", label: "Eng." },
                 { value: "30+", label: "Projects" }
-            ]
-        },
-        {
-            id: 2,
-            name: "Er. eng sec",
-            title: "Co-Founder",
-            image: "https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg",
-            shortBio: "Sustainable construction specialist with focus on eco-friendly design practices.",
-            fullBio: "specializes in sustainable construction practices and eco-friendly design. His innovative approach to civil engineering has earned our company multiple green building certifications and industry recognition.",
-            quote: "The best engineering solutions work with nature, not against it—balancing progress with preservation.",
-            stats: [
-                { value: "5+", label: "Years Exp" },
-                { value: "B.E", label: "Civil" },
-                { value: "5+", label: "Awards" }
             ]
         }
     ];
@@ -121,11 +107,7 @@ function About() {
                       "founders": [
                         {
                           "@type": "Person",
-                          "name": "Er. First Eng"
-                        },
-                        {
-                          "@type": "Person",
-                          "name": "Er. Sec Eng."
+                          "name": "Jaydip Patil Mahalle"
                         }
                       ],
                       "address": {
@@ -169,13 +151,7 @@ function About() {
                         >
                             Where traditional wisdom meets modern engineering excellence
                         </motion.p>
-                        <motion.button
-                            className="px-8 py-3 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105 border border-primary-500 shadow-lg"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            Explore Our Projects
-                        </motion.button>
+                       
                     </div>
                 </motion.div>
 
@@ -197,7 +173,7 @@ function About() {
                             >
                                 <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-xl">
                                     <img
-                                        src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        src="https://res.cloudinary.com/dvfa1ub9w/image/upload/v1753179865/WhatsApp_Image_2025-07-21_at_16.53.02_t06g19.jpg"
                                         alt="Vastushobha Construction Team"
                                         className="w-full h-full object-cover"
                                     />
@@ -215,8 +191,8 @@ function About() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <p className="font-bold text-gray-900">50+</p>
-                                            <p className="text-sm text-gray-600">Satisfied Clients</p>
+                                            <div className="text-lg font-bold text-gray-800">ISO Certified</div>
+                                            <div className="text-xs text-gray-500">Quality Assurance</div>
                                         </div>
                                     </div>
                                 </div>
@@ -233,7 +209,7 @@ function About() {
                                 </h2>
 
                                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                                    Founded in 2020, <span className="font-semibold text-primary-600">Vastushobha Construction</span> has been at the forefront of blending traditional Vastu principles with cutting-edge construction technologies to create spaces that are both harmonious and functional.
+                                    Founded in 2000, <span className="font-semibold text-primary-600">Vastushobha Construction</span> has been at the forefront of blending traditional Vastu principles with cutting-edge construction technologies to create spaces that are both harmonious and functional.
                                 </p>
 
                                 {/* Mission & Vision */}
@@ -282,8 +258,46 @@ function About() {
                             </motion.div>
                         </motion.div>
 
+                        {/* Vastu Principles Section */}
+                        <motion.div 
+                            className="mb-20 bg-gradient-to-r from-primary-50 to-gray-50 p-8 rounded-2xl"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeIn}
+                        >
+                            <div className="text-center mb-12">
+                                <div className="text-primary-500 font-semibold mb-2">OUR APPROACH</div>
+                                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                                    Vastu <span className="text-primary-500">Principles</span> We Follow
+                                </h2>
+                                <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+                                    Blending ancient wisdom with modern construction techniques
+                                </p>
+                            </div>
 
-                        {/* Engineers Section */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {vastuPrinciples.map((principle, index) => (
+                                    <motion.div
+                                        key={index}
+                                        className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
+                                        whileHover="hover"
+                                        variants={cardHover}
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: true }}
+                                        
+                                        transition={{ delay: index * 0.1 }}
+                                    >
+                                        <div className="text-4xl mb-4">{principle.icon}</div>
+                                        <h3 className="text-xl font-semibold text-gray-800 mb-2">{principle.title}</h3>
+                                        <p className="text-gray-600">{principle.desc}</p>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.div>
+
+                        {/* Engineer Section - Centered for Single Profile */}
                         <motion.div
                             className="mb-20"
                             initial="hidden"
@@ -294,23 +308,22 @@ function About() {
                             <div className="text-center mb-12">
                                 <div className="text-primary-500 font-semibold mb-2">OUR TEAM</div>
                                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                                    Meet Our <span className="text-primary-500">Leadership</span>
+                                    Meet Our <span className="text-primary-500">Founder</span>
                                 </h2>
                                 <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-                                    Experienced professionals dedicated to building your vision
+                                    The visionary behind Vastushobha Construction's excellence
                                 </p>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="flex justify-center">
                                 {engineers.map((engineer) => (
                                     <motion.div
                                         key={engineer.id}
-                                        className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
-                                        // variants={fadeIn}
+                                        className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 w-full max-w-2xl"
                                         whileHover="hover"
                                         variants={cardHover}
                                     >
-                                        <div className="relative h-72">
+                                        <div className="relative h-80">
                                             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80 z-10"></div>
                                             <img
                                                 src={engineer.image}
@@ -326,22 +339,22 @@ function About() {
                                         </div>
 
                                         <div className="p-6">
-                                            <div className="flex gap-4 mb-4">
+                                            <div className="flex gap-4 mb-4 justify-center">
                                                 {engineer.stats.map((stat, index) => (
-                                                    <div key={index} className="text-center flex-1 bg-gray-50 p-3 rounded-lg">
+                                                    <div key={index} className="text-center bg-gray-50 p-3 rounded-lg min-w-[100px]">
                                                         <div className="text-xl font-bold text-primary-600">{stat.value}</div>
                                                         <div className="text-xs text-gray-500 uppercase tracking-wider">{stat.label}</div>
                                                     </div>
                                                 ))}
                                             </div>
 
-                                            <p className="text-gray-700 text-base mb-4 leading-relaxed">
+                                            <p className="text-gray-700 text-base mb-4 leading-relaxed text-center">
                                                 {expandedCard === engineer.id ? engineer.fullBio : engineer.shortBio}
                                             </p>
 
                                             {expandedCard === engineer.id && (
                                                 <motion.div
-                                                    className="mt-4 pt-4 border-t border-gray-200"
+                                                    className="mt-4 pt-4 border-t border-gray-200 text-center"
                                                     initial={{ opacity: 0 }}
                                                     animate={{ opacity: 1 }}
                                                     transition={{ duration: 0.3 }}
@@ -352,24 +365,49 @@ function About() {
                                                 </motion.div>
                                             )}
 
-                                            <motion.button
-                                                className="mt-4 text-primary-600 text-base font-medium flex items-center hover:text-primary-800 group"
-                                                onClick={() => setExpandedCard(expandedCard === engineer.id ? null : engineer.id)}
-                                                whileHover={{ scale: 1.03 }}
-                                                whileTap={{ scale: 0.97 }}
-                                            >
-                                                {expandedCard === engineer.id ? 'Show Less' : 'Read More'}
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    {expandedCard === engineer.id ? (
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                                                    ) : (
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                                    )}
-                                                </svg>
-                                            </motion.button>
+                                            <div className="flex justify-center mt-6">
+                                                <motion.button
+                                                    className="text-primary-600 text-base font-medium flex items-center hover:text-primary-800 group"
+                                                    onClick={() => setExpandedCard(expandedCard === engineer.id ? null : engineer.id)}
+                                                    whileHover={{ scale: 1.03 }}
+                                                    whileTap={{ scale: 0.97 }}
+                                                >
+                                                    {expandedCard === engineer.id ? 'Show Less' : 'Read More'}
+                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        {expandedCard === engineer.id ? (
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                                        ) : (
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                                        )}
+                                                    </svg>
+                                                </motion.button>
+                                            </div>
                                         </div>
                                     </motion.div>
                                 ))}
+                            </div>
+                        </motion.div>
+
+                        {/* Testimonial Section */}
+                        <motion.div 
+                            className="bg-primary-600 rounded-2xl p-8 md:p-12 text-gray-700 overflow-hidden relative"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeIn}
+                        >
+                            <div className="absolute -right-10 -top-10 w-32 h-32 bg-primary-700 rounded-full opacity-20"></div>
+                            <div className="absolute -left-20 bottom-0 w-64 h-64 bg-primary-700 rounded-full opacity-20"></div>
+                            
+                            <div className="relative z-10 text-center max-w-4xl mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto text-primary-200 mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                                <h3 className="text-2xl md:text-3xl font-bold mb-6">
+                                    "Vastushobha Construction transformed our vision into a home that's not just beautiful, but also radiates positive energy."
+                                </h3>
+                                <div className="font-medium">- Satisfied Client</div>
+                                <div className="text-primary-200 text-sm mt-2">Residential Project, Akola</div>
                             </div>
                         </motion.div>
                     </div>
