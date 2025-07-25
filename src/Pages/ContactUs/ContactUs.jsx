@@ -30,40 +30,42 @@ const ContactForm = () => {
     setSubmitError('');
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: '234b9caf-40e4-48a0-8169-1c68039db20d',
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-        }),
+      // Format the message for WhatsApp
+      const whatsappMessage = `New Inquiry from Vastushobha Construction Website:
+      
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Message: ${formData.message}
+
+Please respond to this inquiry as soon as possible.`;
+
+      // Encode the message for URL
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      
+      // Create WhatsApp URL
+      const whatsappUrl = `https://wa.me/919975985757?text=${encodedMessage}`;
+      
+      // Open WhatsApp in a new tab
+      window.open(whatsappUrl, '_blank');
+      
+      // Set success state
+      setSubmitSuccess(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
       });
-
-      const result = await response.json();
-
-      if (result.success) {
-        setSubmitSuccess(true);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          message: ''
-        });
-      } else {
-        throw new Error(result.message || 'Failed to submit form');
-      }
+      
     } catch (error) {
-      setSubmitError(error.message || 'Something went wrong. Please try again.');
+      setSubmitError('Something went wrong. Please try again or contact us directly.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  // Rest of the code remains exactly the same...
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -424,10 +426,10 @@ const ContactForm = () => {
                       <div>
                         <h3 className="text-lg font-medium text-gray-900 mb-1">Phone Numbers</h3>
                         <div className="space-y-1">
-                          <a href="tel:+918698165330" className="block text-gray-700 hover:text-red-600 transition-colors">
+                          <a href="tel:+919975985757" className="block text-gray-700 hover:text-red-600 transition-colors">
                             +91 9975985757
                           </a>
-                          <a href="tel:+917745803646" className="block text-gray-700 hover:text-red-600 transition-colors">
+                          <a href="tel:+919552181899" className="block text-gray-700 hover:text-red-600 transition-colors">
                             +91 9552181899
                           </a>
                         </div>
